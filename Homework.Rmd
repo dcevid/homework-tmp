@@ -1,0 +1,38 @@
+---
+title: "Homework"
+author: "Domagoj Cevid"
+date: "9/29/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data
+
+We first generate the data:
+
+```{r}
+data = rlnorm(100, meanlog = 1, sdlog=0.25)
+```
+
+Its mean is `r mean(data)` and its variance is `r sd(data)^2`.
+
+
+## Visualization
+
+We plot here the histograms, by using ggplot since its nicer than base R.
+
+* without transformation
+
+```{r}
+library(ggplot2)
+qplot(data)
+```
+
+* log scale
+
+```{r}
+qplot(log(data))
+```
